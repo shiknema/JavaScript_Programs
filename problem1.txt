@@ -1,0 +1,14 @@
+function getMoosePoints(l, r){
+  if(l < 0 || l > 20 || r < 0 || r > 20 || (r === 0 && l === 0)){
+    return ("Not a moose");
+  }
+  if(l === r){
+    return ("Even " + l*2);
+  }
+  if ( l > r ){
+    return ("Odd " + l*2);
+  }
+  return ("Odd " + r*2);
+}
+
+console.log(getMoosePoints(3,3));
