@@ -1,0 +1,16 @@
+i= ignore Pattern
+
+g= Global flag= To search or extract a pattern more than once, you can use the g flag.
+
+\w= This shortcut is equal to [A-Za-z0-9_]. This character class matches upper and lowercase letters plus numbers.
+     Note, this character class also includes the underscore character (_).
+
+\W= You can search for the opposite of the \w with \W. Note, 
+    the opposite pattern uses a capital letter.This shortcut is the same as [^A-Za-z0-9_].
+
+\d=   The shortcut to look for digit characters is \d, with a lowercase d. 
+      This is equal to the character class [0-9], which looks for a single character
+       of any number between zero and nine.
+
+NOTE- all flag which start with \w,\W & \d,  work with g flag 
+     ex- let numRegex = /\d/g;
