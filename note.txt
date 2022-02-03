@@ -12,5 +12,14 @@ g= Global flag= To search or extract a pattern more than once, you can use the g
       This is equal to the character class [0-9], which looks for a single character
        of any number between zero and nine.
 
+ \s= Search for non-whitespace using \S, which is an uppercase s. 
+     This pattern will not match whitespace, carriage return, tab, form feed, 
+     and new line characters.You can think of it being similar to the character class [ \r\t\f\n\v].
+
+ \S = Search for non-whitespace using \S, which is an uppercase s. 
+     This pattern will not match whitespace, carriage return, tab, form feed,  
+     and new line characters. You can think of it being similar to the character 
+     class [^ \r\t\f\n\v].
+
 NOTE- all flag which start with \w,\W & \d,  work with g flag 
      ex- let numRegex = /\d/g;
