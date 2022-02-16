@@ -1,14 +1,14 @@
-i= ignore Pattern
+  i= ignore Pattern
 
-g= Global flag= To search or extract a pattern more than once, you can use the g flag.
+  g= Global flag= To search or extract a pattern more than once, you can use the g flag.
 
-\w= This shortcut is equal to [A-Za-z0-9_]. This character class matches upper and lowercase letters plus numbers.
+ \w= This shortcut is equal to [A-Za-z0-9_]. This character class matches upper and lowercase letters plus numbers.
      Note, this character class also includes the underscore character (_).
 
-\W= You can search for the opposite of the \w with \W. Note, 
+ \W= You can search for the opposite of the \w with \W. Note, 
     the opposite pattern uses a capital letter.This shortcut is the same as [^A-Za-z0-9_].
 
-\d=   The shortcut to look for digit characters is \d, with a lowercase d. 
+ \d=   The shortcut to look for digit characters is \d, with a lowercase d. 
       This is equal to the character class [0-9], which looks for a single character
        of any number between zero and nine.
 
@@ -20,6 +20,40 @@ g= Global flag= To search or extract a pattern more than once, you can use the g
      This pattern will not match whitespace, carriage return, tab, form feed,  
      and new line characters. You can think of it being similar to the character 
      class [^ \r\t\f\n\v].
+  ^ =  start of input
+ [a-z] =  first character is a letter
+ [0-9]{2,0} = ends with two or more numbers
+ | =  or
+ [a-z]+ = has one or more letters next
+ \d* =  and ends with zero or more numbers
+ $ = end of input
+ i = ignore case of input */
 
 NOTE- all flag which start with \w,\W & \d,  work with g flag 
      ex- let numRegex = /\d/g;
+
+?  =  add this if you have letters in optional for example
+        let american = "color";
+        let british = "colour";
+        let rainbowRegex= /colou?r/;   here it will chwck for either O or U 
+
+?=  --> practical use of lookaheads is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
+
+        let password = "abc123";
+        let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+        checkPass.test(password);
+
+?!  = Opposite of ?=
+
+*? = lazy matching. "titanic" matched against the adjusted 
+        regex of /t[a-z]*?i/ returns ["ti"].
+
+() =  to check for groups of characters 
+        Example-If you want to find either Penguin or Pumpkin in a string, you can use the 
+        following Regular Expression: /P(engu|umpk)in/g
+
+        let testStr = "Pumpkin";
+        let testRegex = /P(engu|umpk)in/;
+        testRegex.test(testStr);
+
+String.prototype.trim()- to remove white space

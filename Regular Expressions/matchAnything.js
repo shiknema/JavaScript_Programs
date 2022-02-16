@@ -1,5 +1,6 @@
 /**
  * Match Anything with Wildcard Period
+ * 
  Sometimes you won't (or don't need to) know the exact characters in your patterns.
  Thinking of all words that match, say, a misspelling would take a long time. Luckily,
   you can save time using the wildcard character: .
