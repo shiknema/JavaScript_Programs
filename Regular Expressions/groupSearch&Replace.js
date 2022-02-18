@@ -32,6 +32,9 @@ let replaceText2 = "$4 $3 $2 $1"; // Change this lin
 let result2 = str2.replace(fixRegex2, replaceText2);
 console.log(result2);
 
+let american = "color";
+let british = "colour";
+let rainbowRegex= /colo?ur/; 
 
 /*
 ********************************************************************
