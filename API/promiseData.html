@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script>
-            async function getFile() {
-              let myPromise = new Promise(function(resolve) {
-                let req = new XMLHttpRequest();
-                req.open('GET', "https://jsonplaceholder.typicode.com/posts/1");
-                req.onload = function() {
-                  if (req.status == 200) {
-                    resolve(req.response);
-                  } else {
-                    resolve("File not Found");
-                  }
-                };
-                req.send();
-              });
-              document.getElementById("demo").innerHTML = await myPromise;
-            }
-            
-           
-            </script>
-    </head>
-    
+
+<head>
+  <script>
+    async function getFile() {
+      let myPromise = new Promise(function (resolve) {
+        let req = new XMLHttpRequest();
+        req.open('GET', "https://jsonplaceholder.typicode.com/posts/1");
+        req.onload = function () {
+          if (req.status == 200) {
+            resolve(req.response);
+          } else {
+            resolve("File not Found");
+          }
+        };
+        req.send();
+      });
+      document.getElementById("demo").innerHTML = await myPromise;
+    }
+
+
+  </script>
+</head>
+
 <body>
 
-<h2>JavaScript async / await</h2>
+  <h2>JavaScript async / await</h2>
 
-<p id="demo"></p>
+  <p id="demo"></p>
 
-<div>
+  <div>
     <button type="button" onclick=" getFile()">Get UserData</button>
-</div>
-<p id="demo">Data: = </br></p>
-<h1 id="data"> User Data = </h1>
+  </div>
+  <p id="demo">Data: = </br></p>
+  <h1 id="data"> User Data = </h1>
 
 </body>
 
